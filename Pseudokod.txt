@@ -1,0 +1,40 @@
+Ustaw CZAS_ODCZYTU_NISKI_RUCH = 5 sekund
+Ustaw CZAS_ODCZYTU_WYSOKI_RUCH = 1 sekunda
+
+Ustaw PROG_NISKI_RUCH = 10 Mb/s
+Ustaw PROG_WYSOKI_RUCH = 20 Mb/s
+
+Ustaw STAN_SIECI = "NORMALNY"
+Ustaw OKNO_ANALIZY = 60 sekund
+Ustaw CZAS_ODCZYTU = CZAS_ODCZYTU_NISKI_RUCH
+
+TABLICA_RAW = pusty zbiór
+
+PĘTLA nieskończona:
+
+    Dla każdego przełącznika agregującego w sieci:
+        DANE_CHWILOWE = ODCZYTAJ_STATYSTYKI(Si)
+        Dodaj DANE_CHWILOWE do TABLICA_RAW
+
+    Czekaj(CZAS_ODCZYTU)
+
+    Jeżeli minął czas OKNO_ANALIZY:
+        
+        SREDNIA_PRZEPUSTOWOSC = 
+            OBLICZ_SREDNIA_WAZONA(TABLICA_RAW)
+
+        WYCZYŚĆ TABLICA_RAW
+
+        Jeżeli STAN_SIECI == "NORMALNY" 
+        oraz SREDNIA_PRZEPUSTOWOSC > PROG_WYSOKI_RUCH:
+            
+            STAN_SIECI = "KRYTYCZNY"
+            CZAS_ODCZYTU = CZAS_ODCZYTU_WYSOKI_RUCH
+
+        Jeżeli STAN_SIECI == "KRYTYCZNY"
+        oraz SREDNIA_PRZEPUSTOWOSC < PROG_NISKI_RUCH:
+
+            STAN_SIECI = "NORMALNY"
+            CZAS_ODCZYTU = CZAS_ODCZYTU_NISKI_RUCH
+
+Koniec pętli
