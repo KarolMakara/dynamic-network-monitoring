@@ -11,14 +11,14 @@ class MonitoringTopo(Topo):
         h2 = self.addHost('h2', ip='10.0.0.2/24')
         h3 = self.addHost('h3', ip='10.0.0.3/24')
         h4 = self.addHost('h4', ip='10.0.0.4/24')
-        s1 = self.addSwitch('s1')
-        s2 = self.addSwitch('s2')
-        s3 = self.addSwitch('s3')
-        s4 = self.addSwitch('s4')
+        s1 = self.addSwitch('s1', dpid='0000000000000001')
+        s2 = self.addSwitch('s2', dpid='0000000000000002')
+        s3 = self.addSwitch('s3', dpid='0000000000000003')
+        s4 = self.addSwitch('s4', dpid='0000000000000004')
 
 
-        a1 = self.addSwitch('a1')
-        a2 = self.addSwitch('a2')
+        a1 = self.addSwitch('a1', dpid='0000000000000005')
+        a2 = self.addSwitch('a2', dpid='0000000000000006')
 
 
         self.addLink(h1, s1, cls=TCLink, bw=100)

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%date{yyyy-MM-dd HH:mm:ss.S} %-5level [%logger{15}] %msg%n</pattern>
+    </encoder>
+  </appender>
+  <root level="WARN">
+    <appender-ref ref="STDOUT" />
+  </root>
+  <logger name="org" level="WARN"/>
+  <logger name="io" level="WARN"/>
+  <logger name="LogService" level="WARN"/>
+  <logger name="org.restlet" level="WARN"/>
+  <logger name="net.floodlightcontroller" level="INFO"/>
+  <logger name="pl.edu.agh.kt" level="INFO"/>
+  <logger name="org.sdnplatform" level="INFO"/>
+</configuration>

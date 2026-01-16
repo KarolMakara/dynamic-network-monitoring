@@ -1,0 +1,1 @@
+sudo mn --custom topology.py --topo monitoringtopo --controller=remote,ip=127.0.0.1 --mac --arp --switch ovs,failmode=standalone,protocols=OpenFlow10
