@@ -2,7 +2,7 @@
 
 ### --- Prerequisites ---
 
-Virtualbox mage: Ubuntu 24.04 \
+Virtualbox image: Ubuntu 24.04 \
 Install all required software, and setup java 8 with bewlow script (only once in lifetime of virtual machine):
 ```bash
 $ ./setup_vm.sh
