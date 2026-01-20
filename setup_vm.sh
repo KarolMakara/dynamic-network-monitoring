@@ -16,7 +16,7 @@ echo -e "${GREEN}[2/6] Instalacja OpenJDK 8 i 21...${NC}"
 sudo apt install -y openjdk-8-jdk openjdk-21-jdk
 
 echo -e "${GREEN}[3/6] Instalacja Ant, Maven i Git...${NC}"
-sudo apt install -y ant git build-essential mininet curl xterm
+sudo apt install -y ant git build-essential mininet curl xterm python3-scapy
 
 echo -e "${GREEN}[4/6] Konfiguracja update-alternatives dla java i javac...${NC}"
 sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-8-openjdk-amd64/bin/java 1081
