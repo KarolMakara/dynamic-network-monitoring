@@ -34,3 +34,8 @@ $ ./routes.sh
 ```
 
 Access network monitor dashboard with: http://<vm_ip>:8080/wm/networkmonitor/dashboard
+
+#### Run traffic generator with:
+```bash
+$ sudo python3 traffic_generator.py
+```
