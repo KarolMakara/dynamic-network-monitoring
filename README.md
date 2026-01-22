@@ -40,6 +40,10 @@ Access network monitor dashboard with: http://localhost:8080/wm/networkmonitor/d
 $ sudo python3 traffic_generator.py
 ```
 
+### Topology
+
+![alt text](https://github.com/KarolMakara/dynamic-network-monitoring/blob/main/topology-diagram.png)
+
 
 ### Monitoring parameters
 
